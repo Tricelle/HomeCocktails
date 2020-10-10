@@ -1,0 +1,58 @@
+<div class="container headText">
+    <h1 class="text-center font-weight-bold headText">Our Tasty Martinis</h1>
+    <div class="row mt-5">
+        <div class="col-md-12">
+        <div class="card-group">
+            <div class="col-sm-4 mb-5" *ngFor="let martini of martinis">
+                <mdb-flipping-card #cards class="">
+                    <!--Front Side-->
+                    <div class="face front tp-box_side tp-box_front">
+    
+                        <!-- Image-->
+                        <div class="card-up">
+                            <img src="{{ martini.strDrinkThumb }}" alt="martiniImage" class="img-fluid">
+                        </div>
+                        <!--Content-->
+                        <div class="card-body">
+                            <h4>{{ martini.strDrink }}</h4>
+                            <p> {{ martini.strAlcoholic }} </p>
+                            <p>Glass needed- {{ martini.strGlass }} </p>
+                            <br>
+    
+                            <!--Triggering button-->
+                            <a class="rotate-btn" data-card="card-1" (click)="cards.toggle()">
+                                <mdb-icon fas icon="redo"></mdb-icon> Find out how to make this tasty cocktail.
+                            </a>
+                        </div>
+                    </div>
+                    <!--/.Front Side-->
+    
+                    <!--Back Side-->
+                    <div class="back tp-box_side tp-box_back">
+    
+                        <!--Content-->
+                        <h4>Ingredients</h4>
+                        <hr>
+                        <li>{{ martini.strMeasure1 }} {{ martini.strIngredient1 }}</li>
+                        <li>{{ martini.strMeasure2 }} {{ martini.strIngredient2 }}</li>
+                        <li>{{ martini.strMeasure3 }} {{ martini.strIngredient3 }}</li>
+                        <li>{{ martini.strMeasure4 }} {{ martini.strIngredient4 }}</li>
+                        <li>{{ martini.strMeasure5 }} {{ martini.strIngredient5 }}</li>
+                        <li>{{ martini.strMeasure6 }} {{ martini.strIngredient6 }}</li>
+                         <li>{{ martini.strMeasure7 }} {{ martini.strIngredient7 }}</li>
+                        <hr>
+                        <P>{{ martini.strInstructions }}</P>
+                        <!--Triggering button-->
+                        <a class="rotate-btn" data-card="card-1" (click)="cards.toggle()">
+                            <mdb-icon fas icon="undo"></mdb-icon> Click here to rotate back
+                        </a>
+    
+                    </div>
+                    <!--/.Back Side-->
+                </mdb-flipping-card>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    

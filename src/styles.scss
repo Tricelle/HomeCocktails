@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
+
+$primary: rgb(255, 0, 98);
+
+li{
+    list-style-type: none;
+}
+
+.headText{
+    //font-family: 'Sansita Swashed', cursive;
+    font-family: 'Nunito', 'sans-serif';
+    padding-top: 50px;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

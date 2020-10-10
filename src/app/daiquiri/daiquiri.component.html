@@ -1,0 +1,57 @@
+<div class="container headText">
+<h1 class="text-center font-weight-bold img-fluid  headText">Our Tasty Daiquiris</h1>
+<div class="row mt-5">
+    <div class="col-md-12">
+        <div class="card-group">
+            <div class="col-sm-4 mb-5" *ngFor="let daiquiri of daiquiris">
+                <mdb-flipping-card #cards class="">
+                    <!--Front Side-->
+                    <div class="face front tp-box_side tp-box_front">
+
+                        <!-- Image-->
+                        <div class="card-up">
+                            <img src="{{ daiquiri.strDrinkThumb }}" alt="daiquiriImage" class="img-fluid">
+                        </div>
+                        <!--Content-->
+                        <div class="card-body">
+                            <h4>{{ daiquiri.strDrink }}</h4>
+                            <p> {{ daiquiri.strAlcoholic }} </p>
+                            <p>Glass needed- {{ daiquiri.strGlass }} </p>
+                            <br>
+
+                            <!--Triggering button-->
+                            <a class="rotate-btn" data-card="card-1" (click)="cards.toggle()">
+                                <mdb-icon fas icon="redo"></mdb-icon> Find out how to make this tasty cocktail.
+                            </a>
+                        </div>
+                    </div>
+                    <!--/.Front Side-->
+
+                    <!--Back Side-->
+                    <div class="back tp-box_side tp-box_back">
+
+                        <!--Content-->
+                        <h4>Ingredients</h4>
+                        <hr>
+                        <li>{{ daiquiri.strMeasure1 }} {{ daiquiri.strIngredient1 }}</li>
+                        <li>{{ daiquiri.strMeasure2 }} {{ daiquiri.strIngredient2 }}</li>
+                        <li>{{ daiquiri.strMeasure3 }} {{ daiquiri.strIngredient3 }}</li>
+                        <li>{{ daiquiri.strMeasure4 }} {{ daiquiri.strIngredient4 }}</li>
+                        <li>{{ daiquiri.strMeasure5 }} {{ daiquiri.strIngredient5 }}</li>
+                        <li>{{ daiquiri.strMeasure6 }} {{ daiquiri.strIngredient6 }}</li>
+                        <li>{{ daiquiri.strMeasure7 }} {{ daiquiri.strIngredient7 }}</li>
+                        <hr>
+                        <P>{{ daiquiri.strInstructions }}</P>
+                        <!--Triggering button-->
+                        <a class="rotate-btn" data-card="card-1" (click)="cards.toggle()">
+                            <mdb-icon fas icon="undo"></mdb-icon> Click here to rotate back
+                        </a>
+
+                    </div>
+                    <!--/.Back Side-->
+                </mdb-flipping-card>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

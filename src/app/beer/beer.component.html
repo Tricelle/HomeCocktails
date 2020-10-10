@@ -1,0 +1,57 @@
+<div class="container headText">
+<h1 class="text-center font-weight-bold headText">Our Beer Mixed Drinks</h1>
+<div class="row mt-5">
+    <div class="col-md-12">
+    <div class="card-group">
+        <div class="col-sm-4 mb-5" *ngFor="let beer of beers">
+            <mdb-flipping-card #cards class="">
+                <!--Front Side-->
+                <div class="face front tp-box_side tp-box_front">
+
+                    <!-- Image-->
+                    <div class="card-up">
+                        <img src="{{ beer.strDrinkThumb }}" alt="beerImage" class="img-fluid">
+                    </div>
+                    <!--Content-->
+                    <div class="card-body">
+                        <h4>{{ beer.strDrink }}</h4>
+                        <p> {{ beer.strAlcoholic }} </p>
+                        <p>Glass needed- {{ beer.strGlass }} </p>
+                        <br>
+
+                        <!--Triggering button-->
+                        <a class="rotate-btn" data-card="card-1" (click)="cards.toggle()">
+                            <mdb-icon fas icon="redo"></mdb-icon> Find out how to make this tasty cocktail.
+                        </a>
+                    </div>
+                </div>
+                <!--/.Front Side-->
+
+                <!--Back Side-->
+                <div class="back tp-box_side tp-box_back">
+
+                    <!--Content-->
+                    <h4>Ingredients</h4>
+                    <hr>
+                    <li>{{ beer.strMeasure1 }} {{ beer.strIngredient1 }}</li>
+                    <li>{{ beer.strMeasure2 }} {{ beer.strIngredient2 }}</li>
+                    <li>{{ beer.strMeasure3 }} {{ beer.strIngredient3 }}</li>
+                    <li>{{ beer.strMeasure4 }} {{ beer.strIngredient4 }}</li>
+                    <li>{{ beer.strMeasure5 }} {{ beer.strIngredient5 }}</li>
+                    <li>{{ beer.strMeasure6 }} {{ beer.strIngredient6 }}</li>
+                     <li>{{ beer.strMeasure7 }} {{ beer.strIngredient7 }}</li>
+                    <hr>
+                    <P>{{ beer.strInstructions }}</P>
+                    <!--Triggering button-->
+                    <a class="rotate-btn" data-card="card-1" (click)="cards.toggle()">
+                        <mdb-icon fas icon="undo"></mdb-icon> Click here to rotate back
+                    </a>
+
+                </div>
+                <!--/.Back Side-->
+            </mdb-flipping-card>
+        </div>
+    </div>
+</div>
+</div>
+</div>

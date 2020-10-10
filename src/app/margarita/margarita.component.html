@@ -1,0 +1,57 @@
+<div class="container headText">
+    <h1 class="text-center font-weight-bold headText">Our Tasty Margaritas</h1>
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <div class="card-group">
+                <div class="col-sm-4 mb-5" *ngFor="let margarita of margaritas">
+                    <mdb-flipping-card #cards class="">
+                        <!--Front Side-->
+                        <div class="face front tp-box_side tp-box_front">
+
+                            <!-- Image-->
+                            <div class="card-up">
+                                <img src="{{ margarita.strDrinkThumb }}" alt="margaritaImage" class="img-fluid">
+                            </div>
+                            <!--Content-->
+                            <div class="card-body">
+                                <h4>{{ margarita.strDrink }}</h4>
+                                <p> {{ margarita.strAlcoholic }} </p>
+                                <p>Glass needed- {{ margarita.strGlass }} </p>
+                                <br>
+
+                                <!--Triggering button-->
+                                <a class="rotate-btn" data-card="card-1" (click)="cards.toggle()">
+                                    <mdb-icon fas icon="redo"></mdb-icon> Find out how to make this tasty cocktail.
+                                </a>
+                            </div>
+                        </div>
+                        <!--/.Front Side-->
+
+                        <!--Back Side-->
+                        <div class="back tp-box_side tp-box_back">
+
+                            <!--Content-->
+                            <h4>Ingredients</h4>
+                            <hr>
+                            <li>{{ margarita.strMeasure1 }} {{ margarita.strIngredient1 }}</li>
+                            <li>{{ margarita.strMeasure2 }} {{ margarita.strIngredient2 }}</li>
+                            <li>{{ margarita.strMeasure3 }} {{ margarita.strIngredient3 }}</li>
+                            <li>{{ margarita.strMeasure4 }} {{ margarita.strIngredient4 }}</li>
+                            <li>{{ margarita.strMeasure5 }} {{ margarita.strIngredient5 }}</li>
+                            <li>{{ margarita.strMeasure6 }} {{ margarita.strIngredient6 }}</li>
+                            <li>{{ margarita.strMeasure7 }} {{ margarita.strIngredient7 }}</li>
+                            <hr>
+                            <P>{{ margarita.strInstructions }}</P>
+                            <!--Triggering button-->
+                            <a class="rotate-btn" data-card="card-1" (click)="cards.toggle()">
+                                <mdb-icon fas icon="undo"></mdb-icon> Click here to rotate back
+                            </a>
+
+                        </div>
+                        <!--/.Back Side-->
+                    </mdb-flipping-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

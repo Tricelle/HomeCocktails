@@ -1,0 +1,58 @@
+<div class="container headText">
+    <h1 class="text-center font-weight-bold headText">Our Tasty Vodka Cocktails</h1>
+    <div class="row mt-5">
+        <div class="col-md-12">
+        <div class="card-group">
+            <div class="col-sm-4 mb-5" *ngFor="let vodka of vodkas">
+                <mdb-flipping-card #cards class="">
+                    <!--Front Side-->
+                    <div class="face front tp-box_side tp-box_front">
+    
+                        <!-- Image-->
+                        <div class="card-up">
+                            <img src="{{ vodka.strDrinkThumb }}" alt="vodkaImage" class="img-fluid">
+                        </div>
+                        <!--Content-->
+                        <div class="card-body">
+                            <h4>{{ vodka.strDrink }}</h4>
+                            <p> {{ vodka.strAlcoholic }} </p>
+                            <p>Glass needed- {{ vodka.strGlass }} </p>
+                            <br>
+    
+                            <!--Triggering button-->
+                            <a class="rotate-btn" data-card="card-1" (click)="cards.toggle()">
+                                <mdb-icon fas icon="redo"></mdb-icon> Find out how to make this tasty cocktail.
+                            </a>
+                        </div>
+                    </div>
+                    <!--/.Front Side-->
+    
+                    <!--Back Side-->
+                    <div class="back tp-box_side tp-box_back">
+    
+                        <!--Content-->
+                        <h4>Ingredients</h4>
+                        <hr>
+                        <li>{{ vodka.strMeasure1 }} {{ vodka.strIngredient1 }}</li>
+                        <li>{{ vodka.strMeasure2 }} {{ vodka.strIngredient2 }}</li>
+                        <li>{{ vodka.strMeasure3 }} {{ vodka.strIngredient3 }}</li>
+                        <li>{{ vodka.strMeasure4 }} {{ vodka.strIngredient4 }}</li>
+                        <li>{{ vodka.strMeasure5 }} {{ vodka.strIngredient5 }}</li>
+                        <li>{{ vodka.strMeasure6 }} {{ vodka.strIngredient6 }}</li>
+                         <li>{{ vodka.strMeasure7 }} {{ vodka.strIngredient7 }}</li>
+                        <hr>
+                        <P>{{ vodka.strInstructions }}</P>
+                        <!--Triggering button-->
+                        <a class="rotate-btn" data-card="card-1" (click)="cards.toggle()">
+                            <mdb-icon fas icon="undo"></mdb-icon> Click here to rotate back
+                        </a>
+    
+                    </div>
+                    <!--/.Back Side-->
+                </mdb-flipping-card>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    
